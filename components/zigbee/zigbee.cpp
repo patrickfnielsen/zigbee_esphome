@@ -365,7 +365,7 @@ void ZigBeeComponent::esp_zb_task_() {
       ESP_LOGE(TAG, "Could not configure reporting for attribute 0x%04X in cluster 0x%04X in endpoint %u",
                reporting_info.attr_id, reporting_info.cluster_id, reporting_info.ep);
     }
-    // ESP_ERROR_CHECK(esp_zb_zcl_start_attr_reporting(attr_info));  // is this needed?
+    ESP_ERROR_CHECK(esp_zb_zcl_start_attr_reporting(attr_info));  // is this needed?
   }
 
   if (esp_zb_set_primary_network_channel_set(ESP_ZB_PRIMARY_CHANNEL_MASK) != ESP_OK) {
