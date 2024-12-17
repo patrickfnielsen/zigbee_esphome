@@ -399,7 +399,7 @@ void ZigBeeComponent::setup() {
     this->mark_failed();
     return;
   }
-  xTaskCreate([](void *arg) { static_cast<ZigBeeComponent *>(arg)->esp_zb_task_(); }, "Zigbee_main", 4096, this, 24,
+  xTaskCreate([](void *arg) { static_cast<ZigBeeComponent *>(arg)->esp_zb_task_(); }, "Zigbee_main", 4096, this, 5,
               NULL);
 }
 
